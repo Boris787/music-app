@@ -67,7 +67,7 @@ export default {
       this.player.play();
       this.player.addEventListener('ended', function () {
         this.index++;
-        if (this.index > this.songs.length -1) {
+        if (this.index > this.songs.length + 1) {
           this.index = 0;
         }
 
