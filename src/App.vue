@@ -60,17 +60,16 @@ export default {
     play (song) {
       if (typeof song.src != "undefined") {
         this.current = song;
-
+        
         this.player.src = this.current.src;
       }
-
+      
       this.player.play();
       this.player.addEventListener('ended', function () {
         this.index++;
-        if (this.index > this.songs.length + 1) {
-          this.index = 0;
+        if (this.index > this.songs.length - 1) {
+          this.index = 1;
         }
-
         this.current = this.songs[this.index];
         this.play(this.current);
       }.bind(this));
